@@ -1,4 +1,5 @@
 require "mcp"
+require_relative "resources"
 
 require_relative "get_apps_stats_tool"
 
@@ -26,7 +27,10 @@ end
 server = MCP::Server.new(
   name: "example_server",
   tools: [ExampleTool, GetAppsStatsTool]
+  resources: ProjectResources.resources
 )
+
+server.resources_read_handler(&ProjectResources.read_handler)
 
 # Create and start the transport
 transport = MCP::Server::Transports::StdioTransport.new(server)
