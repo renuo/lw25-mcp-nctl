@@ -26,7 +26,7 @@ end
 # Set up the server
 server = MCP::Server.new(
   name: "example_server",
-  tools: [ExampleTool, GetAppsStatsTool]
+  tools: [ExampleTool, GetAppsStatsTool],
   resources: ProjectResources.resources
 )
 
