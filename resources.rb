@@ -38,7 +38,7 @@ module ProjectResources
       [{
         uri: to_uri(app),
         mimeType: "application/json",
-        text: JSON.pretty_generate(app)
+        text: app.to_json
       }]
     end
   end
