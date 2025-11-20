@@ -2,6 +2,7 @@ require "mcp"
 require_relative "resources"
 
 require_relative "get_apps_stats_tool"
+require_relative "get_app_logs_tool"
 
 # Create a simple tool
 class ExampleTool < MCP::Tool
@@ -26,7 +27,7 @@ end
 # Set up the server
 server = MCP::Server.new(
   name: "example_server",
-  tools: [ExampleTool, GetAppsStatsTool],
+  tools: [ExampleTool, GetAppsStatsTool, GetAppLogsTool]
   resources: ProjectResources.resources
 )
 
