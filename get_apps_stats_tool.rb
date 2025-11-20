@@ -13,7 +13,7 @@ class GetAppsStatsTool < MCP::Tool
     def call(project:, server_context:)
       MCP::Tool::Response.new([{
         type: "text",
-        text: "nctl get apps -p renuo-remms -o stats"
+        text: "nctl get apps -p #{project} -o stats"
       }])
     end
   end
