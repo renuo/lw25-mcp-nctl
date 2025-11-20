@@ -1,5 +1,7 @@
 require "mcp"
 
+require_relative "get_apps_stats_tool"
+
 # Create a simple tool
 class ExampleTool < MCP::Tool
   description "A simple example tool that echoes back its arguments"
@@ -23,7 +25,7 @@ end
 # Set up the server
 server = MCP::Server.new(
   name: "example_server",
-  tools: [ExampleTool]
+  tools: [ExampleTool, GetAppsStatsTool]
 )
 
 # Create and start the transport
